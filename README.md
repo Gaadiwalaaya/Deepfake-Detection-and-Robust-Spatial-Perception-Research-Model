@@ -78,7 +78,7 @@ Optionally reduce `BATCH_SIZE` if you run out of VRAM:
 BATCH_SIZE = 4 
 put batch size as per your memory
 
-## STEP 4 — (Optional) Pre-crop faces with MTCNN
+## STEP 4  Pre-crop faces with MTCNN
 
 If your images are full video frames, run face-cropping first.
 Create a file `crop_faces.py` and run it:
@@ -125,7 +125,7 @@ crop_dataset(
 
 Then update `config.py` to point to the `_cropped` folders.
 
-## STEP 5 — Run training
+## STEP 5 - Run training
 
 
 python train.py 
@@ -149,7 +149,7 @@ Training log saved to: `training_log.csv`
 - Reduce `BATCH_SIZE` to 4 or 2 in config.py
 - The 7 backbones are large — 8GB VRAM minimum recommended
 
-## STEP 6 — Run inference (demo)
+## STEP 6 — Run inference
 
 
 python inference.py --image path/to/your/image.jpg
@@ -202,10 +202,8 @@ Example output:
 ## Common errors and fixes
 
 **If CUDA out of memory:**
-```python
-# config.py
+# In config.py change
 BATCH_SIZE = 2
-```
 
 **Training loss not decreasing:**
 - Check your dataset class mapping: `fake=0, real=1` is required
